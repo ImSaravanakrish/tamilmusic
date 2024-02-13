@@ -4,10 +4,10 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from AnonXMusic import app
-from AnonXMusic.misc import SUDOERS
-from AnonXMusic.utils import get_readable_time
-from AnonXMusic.utils.database import (
+from TamiliniMusic import app
+from TamiliniMusic.misc import SUDOERS
+from TamiliniMusic.utils import get_readable_time
+from TamiliniMusic.utils.database import (
     add_banned_user,
     get_banned_count,
     get_banned_users,
