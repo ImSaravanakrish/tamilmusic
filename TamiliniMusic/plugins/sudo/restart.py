@@ -10,15 +10,15 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from AnonXMusic import app
-from AnonXMusic.misc import HAPP, SUDOERS, XCB
-from AnonXMusic.utils.database import (
+from TamiliniMusic import app
+from TamiliniMusic.misc import HAPP, SUDOERS, XCB
+from TamiliniMusic.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from AnonXMusic.utils.decorators.language import language
-from AnonXMusic.utils.pastebin import AnonyBin
+from TamiliniMusic.utils.decorators.language import language
+from TamiliniMusic.utils.pastebin import AnonyBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
