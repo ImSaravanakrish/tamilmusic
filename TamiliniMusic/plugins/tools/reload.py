@@ -5,12 +5,12 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
-from AnonXMusic import app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import db
-from AnonXMusic.utils.database import get_assistant, get_authuser_names, get_cmode
-from AnonXMusic.utils.decorators import ActualAdminCB, AdminActual, language
-from AnonXMusic.utils.formatters import alpha_to_int, get_readable_time
+from TamiliniMusic import app
+from TamiliniMusic.core.call import Anony
+from TamiliniMusic.misc import db
+from TamiliniMusic.utils.database import get_assistant, get_authuser_names, get_cmode
+from TamiliniMusic.utils.decorators import ActualAdminCB, AdminActual, language
+from TamiliniMusic.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
 
 rel = {}
