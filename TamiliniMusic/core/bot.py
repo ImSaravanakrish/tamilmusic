@@ -1,5 +1,5 @@
 from pyrogram import Client, errors
-from enums import ChatMemberStatus, ParseMode
+from pyrogram.enums import ChatMemberStatus, ParseMode
 
 import config
 
