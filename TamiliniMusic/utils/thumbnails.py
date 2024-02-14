@@ -95,7 +95,7 @@ async def get_thumb(videoid):
         draw.ellipse(
             [(918, 648), (942, 672)],
             outline="white",
-            fill="white",
+            fill="Blue",
             width=15,
         )
         draw.text(
