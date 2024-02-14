@@ -73,7 +73,7 @@ async def get_thumb(videoid):
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("TamiliniMusic/assets/font2.ttf", 30)
         font = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 30)
-        draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
+        draw.text((1110, 24), unidecode(app.name), fill="white", font=arial)
         draw.text(
             (55, 560),
             f"{channel} | {views[:23]}",
@@ -95,7 +95,7 @@ async def get_thumb(videoid):
         draw.ellipse(
             [(918, 648), (942, 672)],
             outline="white",
-            fill="Blue",
+            fill="white",
             width=15,
         )
         draw.text(
