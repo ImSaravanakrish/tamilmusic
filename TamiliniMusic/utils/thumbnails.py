@@ -74,8 +74,8 @@ async def get_thumb(videoid):
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("TamiliniMusic/assets/font2.ttf", 30)
         font = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 30)
-        font2 = ImageFont.truetype("TamiliniMusic/assets/font4.ttf", 60)
-        draw.text((990, 108), unidecode(app.name), fill="white", font=font2)
+        font2 = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 60)
+        draw.text((990, 108), unidecode(🎻 தமிழினி 🧚🏻‍♀), fill="white")
         draw.text(
             (55, 560),
             f"{channel} | {views[:23]}",
