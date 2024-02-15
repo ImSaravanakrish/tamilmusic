@@ -13,7 +13,7 @@ from TamiliniMusic.utils.exceptions import AssistantErr
 from TamiliniMusic.utils.inline import aq_markup, close_markup, stream_markup
 from TamiliniMusic.utils.pastebin import AnonyBin
 from TamiliniMusic.utils.stream.queue import put_queue, put_queue_index
-from TamiliniMusic.utils.thumbnails import get_thumb
+from TamiliniMusic.utils.thumbnails import get_thumb, gen_thumb
 
 
 async def stream(
@@ -238,10 +238,12 @@ async def stream(
                 "audio",
                 forceplay=forceplay,
             )
+            img = await gen_thumb(vidid)
             button = stream_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
-                photo=config.SOUNCLOUD_IMG_URL,
+                photo=img
+#                photo=config.SOUNCLOUD_IMG_URL,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], duration_min, user_name
                 ),
@@ -409,9 +411,11 @@ async def stream(
                 forceplay=forceplay,
             )
             button = stream_markup(_, chat_id)
+            img = await gen_thumb(vidid)
             run = await app.send_photo(
                 original_chat_id,
-                photo=config.STREAM_IMG_URL,
+#                photo=config.STREAM_IMG_URL,
+                photo=img
                 caption=_["stream_2"].format(user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
