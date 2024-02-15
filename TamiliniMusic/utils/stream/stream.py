@@ -242,7 +242,7 @@ async def stream(
             button = stream_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
-                photo=img
+                photo=img,
 #                photo=config.SOUNCLOUD_IMG_URL,
                 caption=_["stream_1"].format(
                     config.SUPPORT_CHAT, title[:23], duration_min, user_name
@@ -415,7 +415,7 @@ async def stream(
             run = await app.send_photo(
                 original_chat_id,
 #                photo=config.STREAM_IMG_URL,
-                photo=img
+                photo=img,
                 caption=_["stream_2"].format(user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
