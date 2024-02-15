@@ -75,7 +75,7 @@ async def get_thumb(videoid):
         arial = ImageFont.truetype("TamiliniMusic/assets/font2.ttf", 30)
         font = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 30)
         font2 = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 60)
-        draw.text((990, 108), unidecode(🎻 தமிழினி 🧚🏻‍♀), fill="white")
+        draw.text((990, 108), unidecode("🎻 தமிழினி 🧚🏻‍♀"), fill="white")
         draw.text(
             (55, 560),
             f"{channel} | {views[:23]}",
