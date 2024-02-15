@@ -1,5 +1,6 @@
 import os
 import re
+import random
 
 import aiofiles
 import aiohttp
@@ -73,8 +74,8 @@ async def get_thumb(videoid):
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("TamiliniMusic/assets/font2.ttf", 30)
         font = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 30)
-        mice = ImageFont.truetype("TamiliniMusic/assets/font3.ttf", 30)
-        draw.text((1110, 8), unidecode(app.name), fill="white", font=mice)
+        font2 = ImageFont.truetype("TamiliniMusic/assets/font.ttf", 60)
+        draw.text((1110, 8), unidecode(app.name), fill="white", font=font2)
         draw.text(
             (55, 560),
             f"{channel} | {views[:23]}",
@@ -120,3 +121,45 @@ async def get_thumb(videoid):
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL
+
+
+
+async def gen_thumb(thumbnail, title, videoid, theme, ctitle):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(thumbnail) as resp:
+            if resp.status == 200:
+                f = await aiofiles.open(f"cache/thumb{videoid}.jpg", mode="wb")
+                await f.write(await resp.read())
+                await f.close()
+    image1 = Image.open(f"cache/thumb{videoid}.jpg")
+    image2 = Image.open(f"Utils/{theme}.PNG")
+    image3 = changeImageSize(1280, 720, image1)
+    image4 = changeImageSize(1280, 720, image2)
+    image5 = image3.convert("RGBA")
+    image6 = image4.convert("RGBA")
+    Image.alpha_composite(image5, image6).save(f"cache/temp{videoid}.png")
+    img = Image.open(f"cache/temp{videoid}.png")
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.truetype("TamiliniMusic/assets/font", 85)
+    font2 = ImageFont.truetype("TamiliniMusic/assets/font", 60)
+    draw.text(
+        (20, 45),
+        f"Playing on: {ctitle[:14]}...",
+        fill="white",
+        stroke_width=1,
+        stroke_fill="white",
+        font=font2,
+    )
+    draw.text(
+        (25, 595),
+        f"{title[:27]}...",
+        fill="white",
+        stroke_width=2,
+        stroke_fill="white",
+        font=font,
+    )
+    img.save(f"cache/final{videoid}.png")
+    os.remove(f"cache/temp{videoid}.png")
+    os.remove(f"cache/thumb{videoid}.jpg")
+    final = f"cache/final{videoid}.png"
+    return final
