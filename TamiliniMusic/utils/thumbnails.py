@@ -30,7 +30,7 @@ def clear(text):
     return title.strip()
 
 
-async def gen_thumb(videoid):
+async def get_thumb(videoid):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
 
@@ -124,7 +124,7 @@ async def gen_thumb(videoid):
 
 
 
-async def get_thumb(thumbnail, title, videoid, theme, ctitle):
+async def gen_thumb(thumbnail, title, videoid, theme, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
