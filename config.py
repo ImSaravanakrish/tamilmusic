@@ -16,7 +16,7 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 180))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", None))
@@ -78,21 +78,21 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://te.legra.ph/file/25efe6aa029c6baea73ea.jpg"
+    "START_IMG_URL", "https://graph.org/file/8b101845e0d601762c0bb.jpg"
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg"
 )
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
-STATS_IMG_URL = "https://te.legra.ph/file/e906c2def5afe8a9b9120.jpg"
-TELEGRAM_AUDIO_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-TELEGRAM_VIDEO_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-STREAM_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
+STATS_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
+TELEGRAM_AUDIO_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
+TELEGRAM_VIDEO_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
+STREAM_IMG_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
 SOUNCLOUD_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-YOUTUBE_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/8b101845e0d601762c0bb.jpg"
+YOUTUBE_IMG_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
+SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
+SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
+SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/f9da95e7e1ab54c8353c4.png"
 
 
 def time_to_seconds(time):
